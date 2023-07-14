@@ -9,7 +9,7 @@
 int main(void)
 {
 	int d1 = 0;
-	int d2;
+	int d2 = 0;
 
 	while (d1 <= 9)
 	{
@@ -17,8 +17,8 @@ int main(void)
 		{
 			if (d2 != d1 && d2 < d1)
 			{
-			putchar(d1 + 48);
-			putchar(d2 + 48);
+			putchar(d1 + 0);
+			putchar(d2 + 0);
 				if (d1 + d2 != 17)
 				{
 				putchar(',');
