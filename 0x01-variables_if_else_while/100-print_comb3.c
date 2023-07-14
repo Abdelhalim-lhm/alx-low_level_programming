@@ -18,8 +18,8 @@ int main(void)
 		{
 			if (d2 != d1 && d2 < d1)
 			{
-			putchar(d1 + 0);
-			putchar(d2 + 0);
+			putchar(d1 + 48);
+			putchar(d2 + 48);
 				if (d1 + d2 != 17)
 				{
 				putchar(',');
