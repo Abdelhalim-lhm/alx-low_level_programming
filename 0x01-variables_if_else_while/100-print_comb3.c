@@ -9,10 +9,11 @@
 int main(void)
 {
 	int d1 = 0;
-	int d2 = 0;
+	int d2;
 
 	while (d1 <= 9)
 	{
+		d2 = 0;
 		while (d2 <= 9)
 		{
 			if (d2 != d1 && d2 < d1)
