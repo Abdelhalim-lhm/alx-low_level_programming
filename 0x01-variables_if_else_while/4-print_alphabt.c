@@ -13,10 +13,12 @@ int main(void)
 	while (alpha <= 'z')
 	{
 		if (alpha != 'q' && alpha != 'e')
-		putchar(alpha);
-		alpha++;
+		{
+			putchar(alpha);
+			alpha++;
 		else
-		alpha++;
+			alpha++;
+		}
 	}
 		printf("\n");
 	return (0);
