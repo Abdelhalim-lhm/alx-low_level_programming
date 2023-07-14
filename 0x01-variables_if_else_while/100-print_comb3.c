@@ -8,8 +8,8 @@
 
 int main(void)
 {
-	char d1 = '0';
-	char d2;
+	int d1 = 0;
+	int d2;
 
 	while (d1 <= 9)
 	{
