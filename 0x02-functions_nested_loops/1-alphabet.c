@@ -2,7 +2,7 @@
 
 /**
  * print_alphabet - function that print lowcase alphabet
- * Return: 0 Always (Success)
+ * Return: On succes 1.
  */
 
 int print_alphabet(void)
