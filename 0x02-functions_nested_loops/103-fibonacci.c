@@ -7,22 +7,21 @@
 
 int main(void)
 {
-	unsigned long int febo, f1, f2, sum;
+	int febo, f1, f2, sum;
 
-	febo = 0;
 	f1 = 1;
 	f2 = 2;
 	sum = 0;
-		while (febo < 4000000)
+		while (f1 < 4000000)
 		{
-			if (febo % 2 == 0)
+			if (f1 % 2 == 0)
 			{
-			sum = sum + febo;
+			sum = sum + f1;
 			}
 		febo = f1 + f2;
 		f1 = f2;
 		f2 = febo;
 		}
-			printf("%lu", sum);
+			printf("%lu\n", sum);
 			return (0);
 }
