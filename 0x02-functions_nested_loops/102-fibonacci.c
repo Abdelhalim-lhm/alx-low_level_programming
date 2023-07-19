@@ -8,7 +8,7 @@
 int main(void)
 {
 	int i, f1, f2;
-	unsigned long febo;
+	long febo;
 
 	febo = 0;
 	f1 = 1;
@@ -21,11 +21,11 @@ int main(void)
 			f2 = febo;
 		if (i < 48)
 		{
-			printf(" %lu,", febo);
+			printf(" %ld,", febo);
 		}
 		else if (i == 48)
 		{
-			printf("%lu  ", febo);
+			printf("%ld  ", febo);
 		}
 		}
 	printf("\n");
