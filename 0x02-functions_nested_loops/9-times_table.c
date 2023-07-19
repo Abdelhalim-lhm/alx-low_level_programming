@@ -1,45 +1,49 @@
 #include "main.h"
 /**
  * times_table - a function that print the time table
- * Return: 0 Always success
- */
-
+*/
 void times_table(void)
 {
 	int i, j, k;
 
-	for (i = 0; i <= 9 ; i++)
+	for (i = 1; i <= 9 ; i++)
 	{
 		k = 0;
+
 			for (j = 0; j <= 9 ; j++)
 			{
-				if (j == 9 && k < 10)
+				if (k >= 10 && j < 9)
 				{
-					_putchar(' ');
-					_putchar(k + 48);
-					_putchar('\n');
+					putchar((k / 10) + 48);
+					putchar((k % 10) + 48);
+					putchar(',');
 				}
-				else if (j == 9 && k > 10)
+				else if (k < 10 && j < 9)
 				{
-					_putchar((k / 10) + 48);
-					_putchar((k % 10) + 48);
-					_putchar('\n');
+					if (k + i < 10)
+					{
+						putchar(k + 48);
+						putchar(',');
+						putchar(' ');
+					}
+					else
+					{
+						putchar(k + 48);
+						putchar(',');
+					}
 				}
-				else if (k >= 10)
+				else if (j == 9 && k < 10)
 				{
-					_putchar((k / 10) + 48);
-					_putchar((k % 10) + 48);
-					_putchar(',');
-					_putchar(' ');
+					putchar(k + 48);
 				}
-				else if (j < 9 && k < 10)
+				else if (j == 9 && k >= 10)
 				{
-				_putchar(k + 48);
-				_putchar(',');
-				_putchar(' ');
-				_putchar(' ');
+					putchar((k / 10) + 48);
+					putchar((k % 10) + 48);
 				}
+			putchar(' ');
 			k = k + i;
 			}
+		putchar('\n');
 	}
 }
