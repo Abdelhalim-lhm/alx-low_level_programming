@@ -25,7 +25,7 @@ int main(void)
 		}
 		else if (i == 48)
 		{
-			printf("%lu ", febo);
+			printf(" %lu", febo);
 		}
 		}
 	printf("\n");
