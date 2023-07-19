@@ -1,8 +1,9 @@
 #include <stdio.h>
 
 /**
- * main - entrey
- * function that print the first febonaci terms
+ * len - function that calculate the lenght of an int
+ * function that print the first 98 febonaci terms
+ * @n: number to count lenght of
  * Return: 0 on success.
  */
 int len(int n)
@@ -22,7 +23,11 @@ int len(int n)
 
 	return (len);
 }
-
+/**
+ * main - entrey
+ * function that print the first 98 febonaci terms
+ * Return: 0 on success.
+ */
 
 int main(void)
 {
