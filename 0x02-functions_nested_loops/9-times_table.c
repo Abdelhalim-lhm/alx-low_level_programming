@@ -17,11 +17,13 @@ void times_table(void)
 					putchar((k / 10) + 48);
 					putchar((k % 10) + 48);
 					putchar(',');
+					putchar(' ');
 				}
 				else if (k < 10 && j < 9)
 				{
 					putchar(k + 48);
 					putchar(',');
+					putchar(' ');
 					if (k + i < 10)
 					{
 						putchar(' ');
@@ -36,7 +38,6 @@ void times_table(void)
 					putchar((k / 10) + 48);
 					putchar((k % 10) + 48);
 				}
-			putchar(' ');
 			k = k + i;
 			}
 		putchar('\n');
