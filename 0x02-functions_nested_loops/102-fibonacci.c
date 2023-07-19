@@ -7,7 +7,8 @@
 
 int main(void)
 {
-	int i, f1, f2, febo;
+	int i, f1, f2;
+	long int febo;
 
 	febo = 0;
 	f1 = 1;
@@ -20,11 +21,11 @@ int main(void)
 			f2 = febo;
 		if (i < 48)
 		{
-			printf(" %d,", febo);
+			printf(" %ld,", febo);
 		}
 		else if (i == 48)
 		{
-			printf("%d  ", febo);
+			printf("%ld  ", febo);
 		}
 		}
 	printf("\n");
