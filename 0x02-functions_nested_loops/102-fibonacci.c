@@ -8,7 +8,7 @@
 int main(void)
 {
 	int i, f1, f2;
-	unsigned long febo;
+	unsigned int febo;
 
 	febo = 0;
 	f1 = 1;
