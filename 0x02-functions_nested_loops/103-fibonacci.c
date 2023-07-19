@@ -22,6 +22,6 @@ int main(void)
 		f1 = f2;
 		f2 = febo;
 		}
-			printf("%lu\n", sum);
+			printf("%d\n", sum);
 			return (0);
 }
