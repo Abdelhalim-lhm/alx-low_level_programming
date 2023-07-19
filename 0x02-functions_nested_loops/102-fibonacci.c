@@ -10,8 +10,8 @@ int main(void)
 	int i, f1, f2, febo;
 
 	febo = 0;
-	f1 = 0;
-	f2 = 1;
+	f1 = 1;
+	f2 = 2;
 	printf("%d, %d,", f1, f2);
 		for (i = 2 ; i <= 50 ; i++)
 		{
