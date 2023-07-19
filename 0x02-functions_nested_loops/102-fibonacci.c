@@ -21,11 +21,11 @@ int main(void)
 			f2 = febo;
 		if (i < 48)
 		{
-			printf(" %u,", febo);
+			printf(" %i,", febo);
 		}
 		else if (i == 48)
 		{
-			printf("%u  ", febo);
+			printf("%i  ", febo);
 		}
 		}
 	printf("\n");
