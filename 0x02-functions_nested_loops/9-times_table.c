@@ -15,6 +15,7 @@ void times_table(void)
 			{
 				if (j == 9 && k < 10)
 				{
+					_putchar(' ');
 					_putchar(k + 48);
 					_putchar('\n');
 				}
@@ -35,6 +36,7 @@ void times_table(void)
 				{
 				_putchar(k + 48);
 				_putchar(',');
+				_putchar(' ');
 				_putchar(' ');
 				}
 			k = k + i;
