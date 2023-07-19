@@ -13,16 +13,16 @@ int main(void)
 	f1 = 1;
 	f2 = 2;
 	printf("%d, %d,", f1, f2);
-		for (i = 1 ; i <= 49 ; i++)
+		for (i = 1 ; i <= 47 ; i++)
 		{
 			febo = f1 + f2;
 			f1 = f2;
 			f2 = febo;
-		if (i < 49)
+		if (i < 47)
 		{
 			printf(" %d,", febo);
 		}
-		else if (i == 49)
+		else if (i == 47)
 		{
 			printf(" %d", febo);
 		}
