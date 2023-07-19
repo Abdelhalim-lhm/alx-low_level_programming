@@ -7,13 +7,13 @@
 
 int main(void)
 {
-	int i, f1, f2;
-	unsigned int febo;
+	int i;
+	unsigned int febo, f1, f2;
 
 	febo = 0;
 	f1 = 1;
 	f2 = 2;
-	printf("%d, %d,", f1, f2);
+	printf("%lu, %lu,", f1, f2);
 		for (i = 1 ; i <= 48 ; i++)
 		{
 			febo = f1 + f2;
@@ -21,11 +21,11 @@ int main(void)
 			f2 = febo;
 		if (i < 48)
 		{
-			printf(" %i,", febo);
+			printf(" %lu,", febo);
 		}
 		else if (i == 48)
 		{
-			printf("%i  ", febo);
+			printf("%lu  ", febo);
 		}
 		}
 	printf("\n");
