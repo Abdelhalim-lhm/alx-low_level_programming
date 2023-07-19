@@ -1,10 +1,28 @@
 #include <stdio.h>
-#include<math.h>
+
 /**
  * main - entrey
  * function that print the first febonaci terms
  * Return: 0 on success.
  */
+int len(int n)
+{
+	int l = 0;
+
+	if (!n)
+	{
+		return (1);
+	}
+
+	while (n)
+	{
+		n = n / 10;
+		len = len + 1;
+	}
+
+	return (len);
+}
+
 
 int main(void)
 {
@@ -22,7 +40,7 @@ int main(void)
 		{
 			if (fo1 > 0)
 				printf("%lu", fo1);
-			j = (floor(log10(num)) + 1) - 1 - (floor(log10(f1)) + 1);
+			j = len(num) - 1 - len(f1);
 				while (fo1 > 0 && j > 0)
 				{
 					printf("%d", 0);
