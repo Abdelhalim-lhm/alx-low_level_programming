@@ -7,7 +7,7 @@
  */
 int len(int n)
 {
-	int l = 0;
+	int len = 0;
 
 	if (!n)
 	{
