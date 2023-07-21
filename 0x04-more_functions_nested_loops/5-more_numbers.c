@@ -2,8 +2,6 @@
 
 /**
  * more_numbers - function that print 013567891011121314 10 times
- *
- * Return: 0 on success
  */
 
 void more_numbers(void)
