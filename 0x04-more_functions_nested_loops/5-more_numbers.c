@@ -1,7 +1,8 @@
 #include "main.h"
 
 /**
- * more_numbers - function that print 013567891011121314 10 times
+*more_numbers - function that print more numbers
+*Return: 0 in succes
  */
 
 void more_numbers(void)
@@ -16,7 +17,7 @@ void more_numbers(void)
 			{
 				_putchar(i / 10 + 48);
 			}
-		_putchar(i % 10 + 48);	
+		_putchar(i % 10 + 48);
 		}
 	_putchar('\n');
 	}
