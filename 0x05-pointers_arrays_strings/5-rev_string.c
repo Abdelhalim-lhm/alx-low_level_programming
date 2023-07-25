@@ -6,7 +6,7 @@
  */
 void rev_string(char *s)
 {
-	char t[100];
+	char t[500];
 	int i = 0;
 	int j = 0;
 	int k = 0;
@@ -14,7 +14,7 @@ void rev_string(char *s)
 	while (s[i])
 		i++;
 
-	for (j = i - 1 ;j >= 0 ; j--)
+	for (j = i - 1; j >= 0; j--)
 	{
 		t[i - j - 1] = s[j];
 	}
