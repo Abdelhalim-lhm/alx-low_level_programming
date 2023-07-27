@@ -21,10 +21,6 @@ char *cap_string(char *c)
 				c[i + 1] = c[i + 1] - 32;
 			}
 		}
-		if (c[i] == '\\')
-		{
-			putchar('\n');
-		}
 		if (c[i] == '\t')
 		{
 			c[i] = ' ';
