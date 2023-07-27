@@ -1,48 +1,36 @@
 #include "main.h"
 /**
  * *cap_string - function that capitalize letter after some symboles
- * @c: the string to change
+ * @str: the string to change
  * Return: 0 on success
  */
-char *cap_string(char *c)
+char *cap_string(char *str)
 {
-	int i, n = 0;
+	int index = 0;
 
-	while (c[n] != '\0')
+	while (str[index])
 	{
-		n++;
+		while (!(str[index] >= 'a' && str[index] <= 'z'))
+			index++;
+
+		if (str[index - 1] == ' ' ||
+		    str[index - 1] == '\t' ||
+		    str[index - 1] == '\n' ||
+		    str[index - 1] == ',' ||
+		    str[index - 1] == ';' ||
+		    str[index - 1] == '.' ||
+		    str[index - 1] == '!' ||
+		    str[index - 1] == '?' ||
+		    str[index - 1] == '"' ||
+		    str[index - 1] == '(' ||
+		    str[index - 1] == ')' ||
+		    str[index - 1] == '{' ||
+		    str[index - 1] == '}' ||
+		    index == 0)
+			str[index] -= 32;
+
+		index++;
 	}
-	for (i = 0; i < n; i++)
-	{
-		if (c[i] == ' ' || c[i] == '.' || c[i] == '!' || c[i] == '\n')
-		{
-			if (c[i + 1] >= 96 && c[i + 1] <= 122)
-			{
-			c[i + 1] = c[i + 1] - 32;
-			}
-		}
-		if (c[i] == '(' || c[i] == ')' || c[i] == '{' || c[i] == '}')
-		{
-			if (c[i + 1] >= 96 && c[i + 1] <= 122)
-			{
-			c[i + 1] = c[i + 1] - 32;
-			}
-		}
-		if (c[i] == ',' || c[i] == ';' || c[i] == '?' || c[i] == '"')
-		{
-			if (c[i + 1] >= 96 && c[i + 1] <= 122)
-			{
-				c[i + 1] = c[i + 1] - 32;
-			}
-		}
-		if (c[i] == '\t')
-		{
-			c[i] = ' ';
-			if (c[i + 1] >= 96 && c[i + 1] <= 122)
-			{
-				c[i + 1] = c[i + 1] - 32;
-			}
-		}
-	}
-	return (c);
+
+	return (str);
 }
