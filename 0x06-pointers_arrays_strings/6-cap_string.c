@@ -1,36 +1,34 @@
 #include "main.h"
 /**
  * *cap_string - function that capitalize letter after some symboles
- * @str: the string to change
+ * @c: the string to change
  * Return: 0 on success
  */
-char *cap_string(char *str)
+char *cap_string(char *c)
 {
-	int index = 0;
+	int i = 0;
 
-	while (str[index])
+	while (c[i] != '\0')
 	{
-		while (!(str[index] >= 'a' && str[index] <= 'z'))
-			index++;
-
-		if (str[index - 1] == ' ' ||
-		    str[index - 1] == '\t' ||
-		    str[index - 1] == '\n' ||
-		    str[index - 1] == ',' ||
-		    str[index - 1] == ';' ||
-		    str[index - 1] == '.' ||
-		    str[index - 1] == '!' ||
-		    str[index - 1] == '?' ||
-		    str[index - 1] == '"' ||
-		    str[index - 1] == '(' ||
-		    str[index - 1] == ')' ||
-		    str[index - 1] == '{' ||
-		    str[index - 1] == '}' ||
-		    index == 0)
-			str[index] -= 32;
-
-		index++;
+		if (c[i] >= 96 && c[i] <= 122)
+		{
+			if (c[i - 1] == ' ' || c[i - 1] == '.'
+				|| c[i - 1] == '!' || c[i - 1] == '\n' || c[i - 1] == '\t')
+			{
+				c[i] = c[i] - 32;
+			}
+			if (c[i - 1] == '(' || c[i - 1] == ')'
+				|| c[i - 1] == '{' || c[i - 1] == '}')
+			{
+				c[i] = c[i] - 32;
+			}
+			if (c[i - 1] == ',' || c[i - 1] == ';'
+				|| c[i - 1] == '?' || c[i - 1] == '"')
+			{
+				c[i] = c[i] - 32;
+			}
+		}
+		i++;
 	}
-
-	return (str);
+	return (c);
 }
