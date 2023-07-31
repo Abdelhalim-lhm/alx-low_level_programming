@@ -24,14 +24,14 @@ char *_strstr(char *haystack, char *needle)
 				break;
 			}
 		j++;
-			if (j == n)
-			{
-				return (haystack);
-			}
-			if (haystack[i] == '\0')
-			{
- 				return (NULL);
-			}
+		}
+		if (j == n)
+		{
+			return (haystack);
+		}
+		if (haystack[i] == '\0')
+		{
+			return (NULL);
 		}
 	haystack++;
 	}
