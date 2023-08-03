@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 /**
  * is_pal - function that checks equality
  * @s: string to check
@@ -30,12 +31,8 @@ int is_pal(char *s, int i, int n)
  */
 int is_palindrome(char *s)
 {
-	int n = 0;
+	int n = strlen(s);
 
-	while (s[n] != '\0')
-	{
-		n++;
-	}
 	if (*s == '\0')
 	{
 		return (1);
