@@ -58,6 +58,11 @@ int main(int argc, char *argv[])
 
 	if (argc == 2)
 	{
+		if (atoi(argv[1]) < 0)
+		{
+			printf("0\n");
+			return (0);
+		}
 		for (i = 1; i < argc; i++)
     		{
         		for (j = 0; argv[i][j] != '\0'; j++)
@@ -69,15 +74,7 @@ int main(int argc, char *argv[])
 				}
 			}
 		}
-		if (atoi(argv[1]) < 0)
-		{
-			printf("0\n");
-			return (0);
-		}
-		else
-		{
-			count = coin_test(atoi(argv[1]), 0);
-		}
+		count = coin_test(atoi(argv[1]), 0);
 	}
 	else
 	{
