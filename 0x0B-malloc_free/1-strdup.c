@@ -11,7 +11,7 @@ char *_strdup(char *str)
 	char *ar;
 	int i, n = 0;
 
-	if (*str == 0)
+	if (*str == '\0')
 	{
 		return (NULL);
 	}
