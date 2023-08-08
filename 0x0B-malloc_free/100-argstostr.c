@@ -8,8 +8,7 @@
  */
 char *argstostr(int ac, char **av)
 {
-	int i, lt;
-	long unsigned int j;
+	int i, j, lt;
 	char *st = malloc(ac * sizeof(*av));
 	char *out_st;
 
@@ -21,8 +20,7 @@ char *argstostr(int ac, char **av)
 	{
 		lt = lt + strlen(av[i]);
 	}
-	st = malloc((lt + ac) * sizeof(char));
-	
+	st = malloc((lt + ac - 1) * sizeof(char));
 	out_st = st;
 	for (i = 0; i < ac; i++)
 	{
@@ -31,7 +29,7 @@ char *argstostr(int ac, char **av)
 			*st = av[i][j];
 			st++;
 		}
-		*st ='\n';
+		*st = '\n';
 		st++;
 	}
 	return (out_st);
