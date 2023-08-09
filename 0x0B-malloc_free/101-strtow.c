@@ -11,7 +11,7 @@ char **strtow(char *str)
 	char *st;
 	char **out_st;
 
-	if (str == NULL || strcmp(str, "") == 0 || str == ' ')
+	if (str == NULL || strcmp(str, "") == 0 || str == '\0')
 	{
 		return (NULL);
 	}
