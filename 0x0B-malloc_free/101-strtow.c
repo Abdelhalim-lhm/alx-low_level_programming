@@ -11,7 +11,7 @@ char **strtow(char *str)
 	char *st;
 	char **out_st;
 
-	if (str == NULL || strcmp(str, "") == 0 || strcmp(str, " ") == 0)
+	if (str == NULL || strcmp(str, "") == 0)
 	{
 		return (NULL);
 	}
@@ -26,6 +26,10 @@ char **strtow(char *str)
 				i++;
 			}
 		}
+	}
+	if (count == 0)
+	{
+		return (NULL);
 	}
 	out_st = (char **)malloc((count + 1) * sizeof(char *));
 	if (out_st == NULL)
