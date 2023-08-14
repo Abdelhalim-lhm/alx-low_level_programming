@@ -26,12 +26,12 @@ char *_strcpy(char *str1, char *str2)
 {
 	int i;
 
-	for (i = 0; str1[i] != '\0'; i++)
+	for (i = 0; str2[i]; i++)
 	{
-		str2[i] = str1[i];
+		str1[i] = str2[i];
 	}
-	str2[i] = '\0';
-	return (str2);
+	str1[i] = '\0';
+	return (str1);
 }
 /**
  * new_dog - function that creates a new dog
@@ -44,7 +44,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *Ndog;
 
-	if (!name || age < 0 || !owner)
+	if (name == NULL || age < 0 || owner == NULL)
 		return (NULL);
 	Ndog = malloc(sizeof(dog_t));
 	if (Ndog == NULL)
@@ -55,6 +55,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(Ndog);
 		return (NULL);
 	}
+	Ndog->name = _strcpy(Ndog->name, name);
 	Ndog->owner = malloc(sizeof(char) * (_strlen(owner) + 1));
 	if (Ndog->owner == NULL)
 	{
@@ -62,7 +63,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(Ndog);
 		return (NULL);
 	}
-	Ndog->name = _strcpy(Ndog->name, name);
 	Ndog->owner = _strcpy(Ndog->owner, owner);
 	Ndog->age = age;
 	return (Ndog);
