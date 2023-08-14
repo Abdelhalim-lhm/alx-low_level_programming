@@ -26,10 +26,11 @@ char *_strcpy(char *str1, char *str2)
 {
 	int i;
 
-	for (i = 0; i < _strlen(str1); i++)
+	for (i = 0; str1[i] != '\0'; i++)
 	{
 		str2[i] = str1[i];
 	}
+	str2[i] = '\0';
 	return (str2);
 }
 /**
@@ -45,16 +46,16 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	if (!name || age < 0 || !owner)
 		return (NULL);
-	Ndog = (dog_t *)malloc(sizeof(dog_t));
+	Ndog = malloc(sizeof(dog_t));
 	if (Ndog == NULL)
 		return (NULL);
-	Ndog->name = malloc(sizeof(char) * (_strlen(name)));
+	Ndog->name = malloc(sizeof(char) * (_strlen(name) + 1));
 	if (Ndog->name == NULL)
 	{
 		free(Ndog);
 		return (NULL);
 	}
-	Ndog->owner = malloc(sizeof(char) * (_strlen(owner)));
+	Ndog->owner = malloc(sizeof(char) * (_strlen(owner) + 1));
 	if (Ndog->owner == NULL)
 	{
 		free(Ndog->name);
