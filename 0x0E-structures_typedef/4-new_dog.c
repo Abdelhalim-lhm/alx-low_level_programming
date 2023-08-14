@@ -4,7 +4,7 @@
 /**
  * _strlen - function that gives the length of a string
  * @str: the string to calculate
- * Return: 0 on success
+ * Return: lentgh of the string on success
  */
 int _strlen(char *str)
 {
@@ -20,7 +20,7 @@ int _strlen(char *str)
  * _strcpy - function that copy the first string into the second
  * @str1: the first string
  * @str2: the second string
- * Return: 0 on success
+ * Return: the copied string on success
  */
 char *_strcpy(char *str1, char *str2)
 {
@@ -38,7 +38,7 @@ char *_strcpy(char *str1, char *str2)
  * @name: name of the dog
  * @age: age of the dog
  * @owner: owner's name
- * Return: nothing
+ * Return: new dog pointer
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
