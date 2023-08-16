@@ -5,7 +5,7 @@
  * main - function that take 2 arguments and perfom an operation
  * @argc: number of argument
  * @argv: arguments vectors
- * Return: the result of an operation
+ * Return: 0 on success
  */
 int main(int argc, char *argv[])
 {
@@ -29,5 +29,5 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 	printf("%d\n",calc(num1, num2));
-	return (calc(num1, num2));
+	return (0);
 }
