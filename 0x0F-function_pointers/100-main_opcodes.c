@@ -22,9 +22,9 @@ int main(int argc, char *argv[])
 		exit(2);
 	}
 	arr = (char *)main;
-	for (i = atoi(argv[1]) - 1; i >= 0; i--)
+	for (i = 0; i < atoi(argv[1]); i++)
 	{
-		if (i == 0)
+		if (i == atoi(argv[1]) - 1)
 		{
 			printf("%02hhx\n", arr[i]);
 			break;
