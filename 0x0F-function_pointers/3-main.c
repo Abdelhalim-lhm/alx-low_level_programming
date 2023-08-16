@@ -1,11 +1,11 @@
-#include "calc.h"
+#include "3-calc.h"
 #include <stdio.h>
 #include <stdlib.h>
 /**
  * main - function that take 2 arguments and perfom an operation
  * @argc: number of argument
  * @argv: arguments vectors
- * Return: 0 on success
+ * Return: nothing
  */
 int main(int argc, char *argv[])
 {
