@@ -28,6 +28,11 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(99);
 	}
+	if ((*operator == '/' || *operator == '%') && num2 == 0)
+	{
+		printf("Error\n");
+		exit(100);
+	}
 	printf("%d\n",calc(num1, num2));
 	return (0);
 }
