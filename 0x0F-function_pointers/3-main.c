@@ -28,6 +28,6 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(99);
 	}
-	printf("%d\n", calc(num1, num2));
-	return (0);
+	printf("%d\n",calc(num1, num2));
+	return (calc(num1, num2));
 }
