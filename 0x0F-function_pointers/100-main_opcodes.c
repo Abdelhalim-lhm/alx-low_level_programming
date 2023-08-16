@@ -27,6 +27,7 @@ int main(int argc, char *argv[])
 		if (i == 0)
 		{
 			printf("%02hhx\n", arr[i]);
+			break;
 		}
 		else
 		{
