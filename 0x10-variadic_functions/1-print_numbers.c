@@ -10,6 +10,11 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	va_list ls;
 	unsigned int i;
 
+	if (!n)
+	{
+		printf("\n");
+		return;
+	}
 	va_start(ls, n);
 
 	for (i = 0; i < n; i++)
