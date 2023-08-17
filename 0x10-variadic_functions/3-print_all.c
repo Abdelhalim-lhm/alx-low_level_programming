@@ -7,14 +7,7 @@
 void print_string(va_list ls)
 {
 	char *str = va_arg(ls, char *);
-		if (str)
-		{
-			printf("%s", str);
-		}
-		else
-		{
-			printf("(nil)");
-		}
+	printf("%s", str ? str : "(nil)");
 }
 /**
  * print_float - function that print float
