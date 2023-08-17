@@ -7,6 +7,7 @@
 void print_string(va_list ls)
 {
 	char *str = va_arg(ls, char *);
+
 	printf("%s", str ? str : "(nil)");
 }
 /**
@@ -64,7 +65,7 @@ void print_all(const char * const format, ...)
 			if (format[i] == frm[j].type[0])
 			{
 				frm[j].f(ls);
-				printf(format[i + 1] ? ", ": "");
+				printf(format[i + 1] ? ", " : "");
 			}
 		j++;
 		}
