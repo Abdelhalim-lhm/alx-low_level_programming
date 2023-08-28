@@ -6,6 +6,8 @@
  */
 void free_listint(listint_t *head)
 {
+	if (head == NULL)
+		return;
 	while (head != NULL)
 	{
 		listint_t *temp = head;
@@ -13,5 +15,4 @@ void free_listint(listint_t *head)
 		free(temp);
 		head = head->next;
 	}
-
 }
