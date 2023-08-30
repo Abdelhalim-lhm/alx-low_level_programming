@@ -9,6 +9,8 @@ size_t print_listint_safe(const listint_t *head)
 	int count = 0, loop;
 	const listint_t *temp1, *temp2, *loop_node;
 
+	if (head == NULL)
+		return (0);
 	temp1 = head;
 
 	while (temp1 != NULL)
