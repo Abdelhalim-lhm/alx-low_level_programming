@@ -2,11 +2,11 @@
 /**
  * find_listint_loop - function that finds the loop in a linked list
  * @head: head of the list
- * Return: the loop nod
+ * Return: the loop node
  */
 listint_t *find_listint_loop(listint_t *head)
 {
-	listint_t *temp1, *temp2;
+	listint_t *temp1 = NULL, *temp2 = NULL;
 
 	if (head == NULL)
 		return (NULL);
@@ -19,7 +19,7 @@ listint_t *find_listint_loop(listint_t *head)
 		{
 			if (temp1 == temp2)
 			{
-				return (temp1);
+				return (temp2);
 			}
 			temp2 = temp2->next;
 		}
