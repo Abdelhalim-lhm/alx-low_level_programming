@@ -6,13 +6,13 @@
  */
 listint_t *find_listint_loop(listint_t *head)
 {
-	listint_t *temp1 = NULL, *temp2 = NULL;
+	listint_t *temp1, *temp2;
 
 	if (head == NULL)
 		return (NULL);
 	temp1 = head;
 
-	while (temp1 != NULL)
+	while (temp1 != NULL && temp->next != NULL )
 	{
 		temp2 = temp1->next;
 		while (temp2 != NULL)
