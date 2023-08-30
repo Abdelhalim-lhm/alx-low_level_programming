@@ -12,7 +12,7 @@ listint_t *find_listint_loop(listint_t *head)
 		return (NULL);
 	temp1 = head;
 
-	while (temp1 != NULL && temp->next != NULL )
+	while (temp1 != NULL && temp1->next != NULL)
 	{
 		temp2 = temp1->next;
 		while (temp2 != NULL)
