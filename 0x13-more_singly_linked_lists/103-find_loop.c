@@ -11,10 +11,10 @@ listint_t *find_listint_loop(listint_t *head)
 	if (head == NULL)
 		return (NULL);
 	temp1 = head;
+	temp2 = temp1->next
 
 	while (temp1 != NULL)
 	{
-		temp2 = temp1->next;
 		while (temp2 != NULL)
 		{
 			if (temp1 == temp2)
@@ -24,6 +24,7 @@ listint_t *find_listint_loop(listint_t *head)
 			temp2 = temp2->next;
 		}
 		temp1 = temp1->next;
+		temp2 = temp1->next;
 	}
 	return (NULL);
 }
