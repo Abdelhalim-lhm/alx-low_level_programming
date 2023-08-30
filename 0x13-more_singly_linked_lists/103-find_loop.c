@@ -15,8 +15,6 @@ listint_t *find_listint_loop(listint_t *head)
 	while (temp1 != NULL)
 	{
 		temp2 = temp1->next;
-		if (temp2 == NULL)
-			return (temp1);
 		while (temp2 != NULL)
 		{
 			if (temp1 == temp2)
