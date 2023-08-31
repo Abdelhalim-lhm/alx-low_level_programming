@@ -8,7 +8,7 @@ void print_binary(unsigned long int n)
 {
 	int i = 0, bit = 0;
 
-	while (i < 32)
+	while (i < 64)
 	{
 		if ((n >> i) & 1)
 			bit = i;
