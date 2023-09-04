@@ -12,17 +12,19 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	char string[1024];
 	ssize_t output, count;
 
+	if (filename == NULL)
+		return (0);
 	fn = open(filename, O_RDONLY);
 	if (fn == -1)
 		return (0);
-	
-	count = read (fn, string, letters);
+
+	count = read(fn, string, letters);
 	if (count == -1)
 	{
 		close(fn);
 		return (0);
 	}
-	output = write (STDOUT_FILENO, string, count);	
+	output = write(STDOUT_FILENO, string, count);
 	close(fn);
 	if (output == -1)
 	{
