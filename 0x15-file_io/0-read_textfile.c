@@ -12,7 +12,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	char string[1024];
 	ssize_t output, count;
 
-	if (filename == NULL)
+	if (filename == NULL || letters == 0)
 		return (0);
 	fn = open(filename, O_RDONLY);
 	if (fn == -1)
