@@ -12,7 +12,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	char string[1024];
 	ssize_t output, count;
 
-	if (filename == NULL || letters == 0)
+	if (filename == NULL || letters > 1024)
 		return (0);
 	fn = open(filename, O_RDONLY);
 	if (fn == -1)
@@ -26,7 +26,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 	output = write(STDOUT_FILENO, string, count);
 	close(fn);
-	if (output == -1)
+	if (output == -1 || output > count)
 	{
 		return (0);
 	}
