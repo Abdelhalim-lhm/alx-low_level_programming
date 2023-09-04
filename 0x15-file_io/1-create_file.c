@@ -14,12 +14,14 @@ int create_file(const char *filename, char *text_content)
 	fn = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0600);
 	if (fn == -1)
 		return (-1);
-	output = write(fn, text_content, strlen(text_content));
-	if (output == -1)
+	if (!text_content)
 	{
+		output = write(fn, text_content, strlen(text_content));
 		close(fn);
-		return (-1);
+		if (output == -1)
+		{
+			return (-1);
+		}
 	}
-
 	return (1);
 }
