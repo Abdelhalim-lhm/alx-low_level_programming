@@ -12,7 +12,7 @@
  */
 int main(int ac, char **av)
 {
-	int FD_VALUE, fn, fn2, output;
+	int FD_VALUE, FD_VALUE2, fn, fn2, output;
 	char string[1024 * 8];
 
 	if (ac != 3)
@@ -26,7 +26,6 @@ int main(int ac, char **av)
 		dprintf(2, "Error: Can't read from %s\n", av[1]);
 		exit(98);
 	}
-	fn2 = open(av[1], O_RDONLY);
 	fn = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (fn == -1)
 	{
@@ -46,7 +45,8 @@ int main(int ac, char **av)
 		exit(99);
 	}
 	FD_VALUE = close(fn);
-	if (FD_VALUE == -1)
+	FD_VALUE2 = close(fn2);
+	if (FD_VALUE == -1 || FD_VALUE2 == -1)
 	{
 		dprintf(2, "Error: Can't close fd %i\n", errno);
 		exit(100);
