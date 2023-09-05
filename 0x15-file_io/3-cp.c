@@ -13,7 +13,7 @@
 int main(int ac, char **av)
 {
 	int FD_VALUE, FD_VALUE2, fn, fn2, output;
-	char string[1024 * 16];
+	char string[1024 * 4];
 
 	if (ac != 3)
 	{
@@ -21,13 +21,13 @@ int main(int ac, char **av)
 		exit(97);
 	}
 	fn2 = open(av[1], O_RDONLY);
-	if (fn2 == -1 || av[1] == NULL)
+	if (fn2 == -1)
 	{
 		dprintf(2, "Error: Can't read from %s\n", av[1]);
 		exit(98);
 	}
 	fn = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	if (fn == -1 || av[2] == NULL)
+	if (fn == -1)
 	{
 		dprintf(2, "Error: Can't write to %s\n", av[2]);
 		exit(99);
