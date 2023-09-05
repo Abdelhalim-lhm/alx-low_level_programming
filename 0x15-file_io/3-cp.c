@@ -33,7 +33,7 @@ int main(int ac, char **av)
 		exit(99);
 	}
 	output = read(fn2, string, sizeof(string));
-	if (output == -1 || string == NULL)
+	if (output == -1 || sizeof(string) == NULL)
 	{
 		dprintf(2, "Error: Can't read from %s\n", av[1]);
 		exit(98);
