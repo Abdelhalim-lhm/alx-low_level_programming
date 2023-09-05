@@ -29,7 +29,7 @@ int main(int ac, char **av)
 	}
 	while ((output = read(fn2, string, sizeof(string))) > 0)
 	{
-		if (write(fn, string, output) == -1)
+		if (write(fn, string, output) != output)
 		{
 			dprintf(2, "Error: Can't write to %s\n", av[2]);
 			exit(99);
