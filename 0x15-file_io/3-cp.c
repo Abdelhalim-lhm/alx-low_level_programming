@@ -48,7 +48,7 @@ int main(int ac, char **av)
 	FD_VALUE2 = close(fn2);
 	if (FD_VALUE == -1 || FD_VALUE2 == -1)
 	{
-		dprintf(2, "Error: Can't close fd %i\n", errno);
+		dprintf(2, "Error: Can't close fd %i\n", fn);
 		exit(100);
 	}
 	return (0);
