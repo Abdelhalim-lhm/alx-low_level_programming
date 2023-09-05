@@ -1,9 +1,4 @@
-#include <stdio.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <string.h>
-#include <errno.h>
+#include "main.h"
 /**
  * main - function that cp a file into a another
  * @ac: number of argument
@@ -32,24 +27,24 @@ int main(int ac, char **av)
 		dprintf(2, "Error: Can't write to %s\n", av[2]);
 		exit(99);
 	}
-	output = read(fn2, string, sizeof(string));
-	if (output == -1 || sizeof(string) == NULL)
+	if (string != NULL)
 	{
-		dprintf(2, "Error: Can't read from %s\n", av[1]);
-		exit(98);
-	}
-	output = write(fn, string, output);
-	if (output == -1)
-	{
-		dprintf(2, "Error: Can't write to %s\n", av[2]);
-		exit(99);
+		output = read(fn2, string, sizeof(string));
+		if (output == -1)
+		{
+			dprintf(2, "Error: Can't read from %s\n", av[1]), exit(98);
+		}
+		output = write(fn, string, output);
+		if (output == -1)
+		{
+			dprintf(2, "Error: Can't write to %s\n", av[2]), exit(99);
+		}
 	}
 	FD_VALUE = close(fn);
 	FD_VALUE2 = close(fn2);
 	if (FD_VALUE == -1 || FD_VALUE2 == -1)
 	{
-		dprintf(2, "Error: Can't close fd %i\n", -1);
-		exit(100);
+		dprintf(2, "Error: Can't close fd %i\n", -1), exit(100);
 	}
 	return (0);
 }
