@@ -13,7 +13,7 @@
 int main(int ac, char **av)
 {
 	int FD_VALUE, FD_VALUE2, fn, fn2, output;
-	char string[1024 * 8];
+	char string[1024];
 
 	if (ac != 3)
 	{
