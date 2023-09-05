@@ -8,12 +8,12 @@
  * main - function that cp a file into a another
  * @ac: number of argument
  * @av: file arguments
- * Return: 1 on success
+ * Return: 0 on success
  */
 int main(int ac, char **av)
 {
 	int FD_VALUE, FD_VALUE2, fn, fn2, output;
-	char string[1024 * 16];
+	char string[1024];
 
 	if (ac != 3)
 	{
@@ -51,5 +51,5 @@ int main(int ac, char **av)
 		dprintf(2, "Error: Can't close fd %i\n", errno);
 		exit(100);
 	}
-	return (1);
+	return (0);
 }
