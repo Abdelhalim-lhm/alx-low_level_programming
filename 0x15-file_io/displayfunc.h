@@ -11,7 +11,7 @@ void printversion(Elfh_data elf_header)
 	printf("  Version:                           ");
 	if (elf_header.e_ident[6] == 0)
 	{
-		printf("0 (invalid)\n");
+		printf("0\n");
 	}
 	else
 	{
@@ -119,6 +119,6 @@ void printype(Elfh_data elf_header)
 void printentry(Elfh_data elf_header)
 {
 	printf("  Entry point adress:                ");
-	printf("0x%lx\n", elf_header.e_entry);
+	printf("0x%lx\n", (unsigned long)elf_header.e_entry);
 }
 #endif
