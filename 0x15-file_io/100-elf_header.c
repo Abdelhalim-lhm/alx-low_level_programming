@@ -67,7 +67,7 @@ void printdata(Elfh_data elf_header)
 int main(int ac, char **av)
 {
 	FILE *elf;
-	int FD_VALUE;
+	int test;
 	Elfh_data elf_header;
 
 	if (ac != 2)
@@ -79,7 +79,11 @@ int main(int ac, char **av)
 	{
 		dprintf(2, "Error: Can't open the file %s\n", av[1]), exit(98);
 	}
-	fread(&elf_header, sizeof(Elf64_Ehdr), 1, elf);
+	test = fread(&elf_header, sizeof(Elf64_Ehdr), 1, elf);
+	if (test == -1)
+	{
+		dprintf(2, "Error: Can't open the file %s\n", av[1]), exit(98);
+	}
 	if (elf_header.e_ident[0] != 0x7f || elf_header.e_ident[1] != 'E'
 			|| elf_header.e_ident[2] != 'L' || elf_header.e_ident[3] != 'F')
 	{
@@ -94,10 +98,10 @@ int main(int ac, char **av)
 	printABI(elf_header);
 	printype(elf_header);
 	printentry(elf_header);
-	FD_VALUE = fclose(elf);
-	if (FD_VALUE == -1)
+	test = fclose(elf);
+	if (test == -1)
 	{
-		dprintf(2, "Error: Can't close file %i\n", FD_VALUE), exit(98);
+		dprintf(2, "Error: Can't close file\n"), exit(98);
 	}
 	return (0);
 }
