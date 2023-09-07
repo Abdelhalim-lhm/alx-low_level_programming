@@ -80,8 +80,8 @@ int main(int ac, char **av)
 		dprintf(2, "Error: Can't open the file %s\n", av[1]), exit(98);
 	}
 	fread(&elf_header, sizeof(Elf64_Ehdr), 1, elf);
-	if (elf_header.e_ident[1] != 'E' || elf_header.e_ident[2] != 'L'
-		       || elf_header.e_ident[3] != 'F')
+	if (elf_header.e_ident[0] != 0x7f || elf_header.e_ident[1] != 'E'
+			|| elf_header.e_ident[2] != 'L' || elf_header.e_ident[3] != 'F')
 	{
 		dprintf(2, "Error: %s it's not an ELF file\n", av[1]), exit(98);
 	}
