@@ -72,22 +72,22 @@ int main(int ac, char **av)
 
 	if (ac != 2)
 	{
-		dprintf(2, "Usage: %s elf_filename\n", av[0]), exit(98);
+		fprintf(stderr, "Usage: %s elf_filename\n", av[0]), exit(98);
 	}
 	elf = fopen(av[1], "rb");
 	if (elf == NULL)
 	{
-		dprintf(2, "Error: Can't open the file %s\n", av[1]), exit(98);
+		fprintf(stderr, "Error: Can't open the file %s\n", av[1]), exit(98);
 	}
 	test = fread(&elf_header, sizeof(Elf64_Ehdr), 1, elf);
 	if (test < 1)
 	{
-		dprintf(2, "Error: Can't open the file %s\n", av[1]), exit(98);
+		fprintf(stderr, "Error: Can't open the file %s\n", av[1]), exit(98);
 	}
 	if (elf_header.e_ident[0] != 0x7f || elf_header.e_ident[1] != 'E'
 			|| elf_header.e_ident[2] != 'L' || elf_header.e_ident[3] != 'F')
 	{
-		dprintf(2, "Error: %s it's not an ELF file\n", av[1]), exit(98);
+		fprintf(stderr, "Error: %s it's not an ELF file\n", av[1]), exit(98);
 	}
 	printf("ELF Header:\n  ");
 	printmagic(elf_header);
@@ -101,7 +101,7 @@ int main(int ac, char **av)
 	test = fclose(elf);
 	if (test == -1)
 	{
-		dprintf(2, "Error: Can't close file\n"), exit(98);
+		fprintf(stderr, "Error: Can't close file\n"), exit(98);
 	}
 	return (0);
 }
