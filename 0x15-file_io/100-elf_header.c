@@ -80,7 +80,7 @@ int main(int ac, char **av)
 		dprintf(2, "Error: Can't open the file %s\n", av[1]), exit(98);
 	}
 	test = fread(&elf_header, sizeof(Elf64_Ehdr), 1, elf);
-	if (test =! 1)
+	if (test < 1)
 	{
 		dprintf(2, "Error: Can't open the file %s\nfread(&elf_header, sizeof(Elf64_Ehdr), 1, elf);", av[1]), exit(98);
 	}
