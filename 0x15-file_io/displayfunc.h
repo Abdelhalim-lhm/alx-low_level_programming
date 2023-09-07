@@ -26,7 +26,62 @@ void printversion(Elfh_data elf_header)
 void printOSABI(Elfh_data elf_header)
 {
 	printf("  OS/ABI:                            ");
-	printf("%i\n", elf_header.e_ident[7]);
+	if (elf_header.e_ident[7] == 0)
+	{
+		printf("UNIX - System V\n");
+	}
+	else if (elf_header.e_ident[7] == 1)
+	{
+		printf("UNIX - HPUX\n");
+	}
+	else if (elf_header.e_ident[7] == 2)
+	{
+		printf("UNIX - NETBSD\n");
+	}
+	else if (elf_header.e_ident[7] == 3)
+	{
+		printf("UNIX - LINUX\n");
+	}
+	else if (elf_header.e_ident[7] == 6)
+	{
+		printf("UNIX - SOLARIS\n");
+	}
+	else if (elf_header.e_ident[7] == 7)
+	{
+		printf("UNIX - AIX\n");
+	}
+	else if (elf_header.e_ident[7] == 8)
+	{
+		printf("UNIX - IRIX\n");
+	}
+	else if (elf_header.e_ident[7] == 9)
+	{
+		printf("UNIX - FREEBSD\n");
+	}
+	else if (elf_header.e_ident[7] == 10)
+	{
+		printf("UNIX - TRU64\n");
+	}
+	else if (elf_header.e_ident[7] == 11)
+	{
+		printf("UNIX - MODESTO\n");
+	}
+	else if (elf_header.e_ident[7] == 12)
+	{
+		printf("UNIX - OPENBSD\n");
+	}
+	else if (elf_header.e_ident[7] == 13)
+	{
+		printf("UNIX - OPENVMS\n");
+	}
+	else if (elf_header.e_ident[7] == 14)
+	{
+		printf("UNIX - NSK\n");
+	}
+	else
+	{
+		printf("Architecture-specific value range\n");
+	}
 }
 /**
  * printABI - function that print ABI
