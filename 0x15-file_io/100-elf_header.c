@@ -72,7 +72,7 @@ int main(int ac, char **av)
 
 	if (ac != 2)
 	{
-		dprintf(2, "Usage: %s elf_filename\n", av[0]), exit(97);
+		dprintf(2, "Usage: %s elf_filename\n", av[0]), exit(98);
 	}
 	elf = fopen(av[1], "rb");
 	if (elf == NULL)
@@ -97,7 +97,7 @@ int main(int ac, char **av)
 	FD_VALUE = fclose(elf);
 	if (FD_VALUE == -1)
 	{
-		dprintf(2, "Error: Can't close file %i\n", FD_VALUE), exit(100);
+		dprintf(2, "Error: Can't close file %i\n", FD_VALUE), exit(98);
 	}
 	return (0);
 }
